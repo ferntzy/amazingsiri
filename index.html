@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Siri</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <audio id="bgMusic" loop></audio>
+
+    <!-- Song Selection Screen -->
+    <!-- <div id="songSelector">
+        <h1>Before We Begin ♪</h1>
+        <p>Choose a song to set the mood for this message...</p>
+        <div class="song-options">
+            <div class="song-card" data-song="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3">
+                <img src="https://images.unsplash.com/photo-1511671786110-7bd6b7e1f2bc?w=400" alt="Romantic sunset">
+                <h3>Perfect – Ed Sheeran</h3>
+                <p>Darling, just hold my hand...</p>
+            </div>
+            <div class="song-card" data-song="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3">
+                <img src="https://images.unsplash.com/photo-1518568814500-bf0f8d125322?w=400" alt="Starry night">
+                <h3>A Thousand Years – Christina Perri</h3>
+                <p>I have loved you for a thousand years...</p>
+            </div>
+            <div class="song-card" data-song="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3">
+                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400" alt="Ocean love">
+                <h3>All of Me – John Legend</h3>
+                <p>'Cause all of me loves all of you...</p>
+            </div>
+        </div>
+    </div> -->
+
+    <canvas id="fireworks"></canvas>
+    
+    <div class="floral-decoration floral-top-left"></div>
+    <div class="floral-decoration floral-bottom-right"></div>
+    
+    <!-- Section 1: Opening -->
+    <section class="section section-1">
+        <div class="message-box fade-in">
+            <h1>Dear Siri</h1>
+            <p class="message">
+                Scroll down for something special...
+            </p>
+            <div class="scroll-indicator">↓</div>
+        </div>
+    </section>
+
+    <!-- Section 2: First Message -->
+    <section class="section section-2">
+        <div class="message-box reveal">
+            <h2 class="fancy-title">You Are Extraordinary</h2>
+            <p class="message">
+                In a world of ordinary moments, you are the <span class="highlight">extraordinary</span> that makes everything shine brighter.
+            </p>
+        </div>
+    </section>
+
+    <!-- Section 3: Floating Hearts Surprise -->
+    <section class="section section-3">
+        <div class="message-box reveal">
+            <h2 class="fancy-title">You</h2>
+            <p class="message">
+                Just knowing you are here fills my life with <span class="highlight">warmth</span>, and the conversations we share truly means a lot to me</p>
+            <div class="hearts-container"></div>
+        </div>
+    </section>
+
+    <!-- Section 4: Sparkle Effect -->
+    <section class="section section-4">
+        <div class="message-box reveal">
+            <h2 class="fancy-title">How Much You Mean to Me</h2>
+            <p class="message">
+                I want you to know how deeply I <span class="highlight">value</span> and <span class="highlight">care</span> for you.
+            </p>
+            <div class="sparkles"></div>
+        </div>
+    </section>
+
+    <!-- Section 5: Appreciation -->
+    <section class="section section-5">
+        <div class="message-box reveal">
+            <h2 class="fancy-title">Thank You</h2>
+            <p class="message">
+                Thank you for being the <span class="highlight">beautiful soul</span> that you are. You're more special to me than words can truly express.
+            </p>
+        </div>
+    </section>
+
+    <!-- Section 6: Question 1 -->
+    <section class="section section-6">
+        <div class="message-box reveal question-box">
+            <h2 class="fancy-title">First Question... </h2>
+            <p class="message big-text">
+                Do you believe in destiny?
+            </p>
+            <div class="button-container">
+                <button class="answer-btn yes-btn" data-answer="yes">Yes!</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 7: Question 2 -->
+    <section class="section section-7">
+        <div class="message-box reveal question-box">
+            <h2 class="fancy-title">Because...</h2>
+            <p class="message big-text">
+                I believe destiny brought us together
+            </p>
+            <p class="message"></p>
+            
+        </div>
+    </section>
+
+    <!-- Section 8: Question 3 -->
+    <section class="section section-8">
+        <div class="message-box reveal question-box">
+            <h2 class="fancy-title">I Believe...</h2>
+            <p class="message big-text">
+                Someone as amazing as you deserves someone who will cherish every moment with you
+            </p>
+        </div>
+    </section>
+
+    <!-- Section 9: The Big Question -->
+    <section class="section section-9">
+        <div class="message-box reveal question-box">
+            <h2 class="fancy-title big-question">Can I Be That Someone?</h2>
+            <div class="button-container">
+                <button id="finalYesBtn" class="answer-btn yes-btn" data-answer="yes">Yes</button>
+                <button id="finalNoBtn" class="answer-btn no-btn" data-answer="no">No</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Celebration Section (Hidden initially) -->
+    <section class="section celebration-section" id="celebrationSection">
+        <div class="message-box">
+            <h1 class="celebration-title">Thank you</h1>
+            <p class="message celebration-message">
+                I genuinely appreciate the rare and sincere connection we have developed, 
+                and promise to maintain the integrity of this special bond with deep thoughtfulness and respect,
+                eagerly looking forward to whatever beautiful destiny awaits us, 
+                while patiently trusting the promise from the Bible When the time is right, I, the Lord, will make it happen
+            </p>
+            <div class="heart-burst"></div>
+        </div>
+    </section>
+
+    <!-- Modal for "No" responses -->
+    <div id="noModal" class="modal">
+        <div class="modal-content">
+            <h2 class="modal-title" id="modalTitle">Are you sure?</h2>
+            <p class="modal-message" id="modalMessage">Please reconsider...</p>
+            <div class="modal-buttons">
+                <button id="modalYesBtn" class="answer-btn yes-btn">Yes</button>
+                <button id="modalNoBtn" class="answer-btn no-btn">No</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js">
+        
+    </script>
+</body>
+</html>
