@@ -178,7 +178,7 @@ const noResponses = [
 function showModal() {
     if (noCount < noResponses.length) {
         modalTitle.textContent = noResponses[noCount].title;
-        modalMessage.textContent = noResponses[noResponses.length].message;
+        modalMessage.textContent = noResponses[noCount].message;
         modal.classList.add('active');
     }
 }
@@ -228,16 +228,16 @@ modal.addEventListener('click', e => {
 
 function forceYes() {
     document.querySelectorAll('.no-btn').forEach(btn => {
-        btn.textContent = 'Yes! ❤️';
+        btn.textContent = 'Yes!';
         btn.classList.remove('no-btn');
         btn.classList.add('yes-btn');
         btn.onclick = triggerCelebration;
     });
 
-    modalTitle.textContent = "Wala nay no choice dong!";
-    modalMessage.textContent = "HAHAHHAHAHAHA LOVE WINS";
+    modalTitle.textContent = "HAHHAHAHHA";
+    modalMessage.textContent = "bawal NO oy ";
     modalNoBtn.style.display = 'none';
-    modalYesBtn.textContent = 'YES NA GYUD';
+    modalYesBtn.textContent = 'YES';
     modal.classList.add('active');
 }
 
